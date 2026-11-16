@@ -42,7 +42,7 @@ const Passkey = () => {
         }
 
 
-    }, [encryptedKey])
+    }, [encryptedKey,path,router])
 
     const closeModel = () => {
         setopen(false)

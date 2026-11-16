@@ -30,7 +30,7 @@ export function AppointmentForm({ type, userId, patientId, appointment, setopen 
   const [isLoading, setIsLoading] = useState(false)
   const router = useRouter()
 
-
+  //@ts-ignore
   const AppointmentFormValidation = getAppointmentSchema(type) as any;
   const form = useForm<z.infer<typeof AppointmentFormValidation>>({
     resolver: zodResolver(AppointmentFormValidation),

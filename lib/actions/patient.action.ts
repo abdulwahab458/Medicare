@@ -17,8 +17,9 @@ export const createUser = async (user: CreateUserParams) => {
             user.name
 
         )
-        console.log({ newUser })
-    } catch (error: any) {
+
+    } catch (error) {
+        //@ts-expect-error
         if (error && error?.code === 409) {
             const documents = await users.list([
                 Query.equal('email', [user.email])

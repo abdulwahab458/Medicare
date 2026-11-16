@@ -18,6 +18,7 @@ import { Textarea } from "./textarea"
 import { Checkbox } from "./checkbox"
 
 interface CustomProps {
+  //@ts-ignore
   control: Control<any>,
   fieldtype: FormFieldType,
   name: string,
@@ -29,6 +30,7 @@ interface CustomProps {
   dateFormat?: string,
   showTimeSelect?: boolean,
   children?: React.ReactNode,
+  //@ts-ignore
   renderSkeleton?: (field: any) => React.ReactNode
 }
 
@@ -38,7 +40,7 @@ const inputWrapperStyles =
 
 const inputBaseStyles =
   "bg-transparent text-white w-full focus:outline-none placeholder:text-gray-400"
-
+//@ts-ignore
 const RenderField = ({ field, props }: { field: any, props: CustomProps }) => {
   const {
     fieldtype,

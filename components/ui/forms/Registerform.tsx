@@ -31,7 +31,7 @@ export function Registerform({ user }: RegisterProps) {
   const router = useRouter()
 
   const form = useForm<z.infer<typeof PatientFormValidation>>({
-    // @ts-ignore
+    // @ts-expect-error
     resolver: zodResolver(PatientFormValidation),
     defaultValues: {
       ...PatientFormDefaultValues,
@@ -76,7 +76,6 @@ export function Registerform({ user }: RegisterProps) {
 
   return (
     <Form {...form}>
-      
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
         <section className="mb-11 space-y-4">
           <h1 className="text-3xl">Welcome</h1>

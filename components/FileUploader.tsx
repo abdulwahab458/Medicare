@@ -14,7 +14,7 @@ interface FileUploaderprops{
 const FileUploader = ({files,onchange}:FileUploaderprops)=> {
   const onDrop = useCallback((acceptedFiles:File[]) => {
     onchange(acceptedFiles)
-  }, [])
+  }, [onchange])
   const {getRootProps, getInputProps} = useDropzone({onDrop})
 
   return (

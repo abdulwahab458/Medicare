@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 import { CalendarDays, Stethoscope, ShieldCheck, BellRing,  ArrowRight, HeartPulse, Pill, BadgeCheck } from "lucide-react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function Home() {
   const router = useRouter();
@@ -14,6 +15,8 @@ export default function Home() {
   const handleLoginClick = () => {
     router.push('/Home');
   };
+
+  
 
   return (
     <div className="min-h-screen bg-gray-900 text-white overflow-x-hidden">
@@ -42,6 +45,16 @@ export default function Home() {
           transition={{ duration: 0.5 }}
           className="flex space-x-4"
         >
+          <Button 
+            variant="outline" 
+            className="border-emerald-400 text-emerald-400 hover:bg-emerald-900/50 hover:text-emerald-300 transition-all group"
+            
+          >
+            <Link href="https://medicare-ai-assistant.vercel.app/">
+            <span>Medicare AI Assistant</span>
+            </Link>
+            <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+          </Button>
           <Button 
             variant="outline" 
             className="border-emerald-400 text-emerald-400 hover:bg-emerald-900/50 hover:text-emerald-300 transition-all group"
